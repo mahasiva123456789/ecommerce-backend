@@ -7,8 +7,7 @@ app.use(cors());
 const mongoose=require('mongoose')
 const productsRoutes= require('./routes/Routes')
 mongoose.connect(
-    // "mongodb+srv://mahalakshmi:maha2606@e-commerce-cluster.84ydkya.mongodb.net/e-commerse"
-    "mongodb://localhost:27017/e-commerse"
+    "mongodb+srv://mahalakshmi:maha2606@e-commerce-cluster.84ydkya.mongodb.net/e-commerse"
 
 ).then(()=>
 {
