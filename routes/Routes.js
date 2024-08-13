@@ -8,7 +8,7 @@ const router=express.Router();
 
 // products
 router.get('/products',productController.getProducts)
-router.post('/products',auth,productController.createProducts)
+router.post('/products',productController.createProducts)
 router.delete('/products/:id',productController.deleteProducts)
 router.put('/products/:id',productController.updateProducts)
 

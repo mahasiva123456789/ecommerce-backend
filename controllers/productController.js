@@ -13,20 +13,40 @@ exports.getProducts=async(req,res)=>{
     }
 }
 
-exports.createProducts=async(req,res)=>{
-    const{title,description,price,category,rating,image}=req.body;
-    const product=new Product({
-        id:uuidv4(),
+exports.createProducts = async (req, res) => {
+    const { title,description,price,mrp,offerPercentage,category,rating,image,brand,colour,material,
+        productDimensions, size, backStyle,specialFeature,productCareInstructions,netQuantity,
+        seatMaterialType} = req.body;
+
+    const product = new Product({
+        id: uuidv4(),
         title,
         description,
         price,
+        mrp,
+        offerPercentage,
         category,
         rating,
         image,
-    })
-    await product.save();
-    res.status(200).json("product created successfully");
-}
+        brand,
+        colour,
+        material,
+        productDimensions,
+        size,
+        backStyle,
+        specialFeature,
+        productCareInstructions,
+        netQuantity,
+        seatMaterialType
+    });
+
+    try {
+        await product.save();
+        res.status(200).json("Product created successfully");
+    } catch (error) {
+        res.status(500).json({ error: "Failed to create product" });
+    }
+};
 
 exports.deleteProducts=async(req,res)=>{
     const {id}=req.params;
