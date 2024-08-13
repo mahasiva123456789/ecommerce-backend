@@ -7,7 +7,7 @@ const auth =require('../middlewares/auth')
 const router=express.Router();
 
 // products
-router.get('/products',auth,productController.getProducts)
+router.get('/products',productController.getProducts)
 router.post('/products',auth,productController.createProducts)
 router.delete('/products/:id',productController.deleteProducts)
 router.put('/products/:id',productController.updateProducts)
