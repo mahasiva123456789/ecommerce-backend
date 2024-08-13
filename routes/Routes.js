@@ -14,7 +14,7 @@ router.put('/products/:id',productController.updateProducts)
 
 // user routers
 router.post('/users',userController.createuser)
-router.get('/users',userController.login)
+router.post('/users',userController.login)
 
 //cart routers
 router.post('/carts/createcart',auth,cartcontroller.createCart)
